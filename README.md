@@ -27,17 +27,25 @@ O modelo lógico foi refinado para incluir as seguintes regras de negócio:
 
 O diagrama abaixo representa o esquema relacional final implementado.
 
----
 
 [clients] <--1-- [natural_person]
+
 [clients] <--1-- [legal_person]
+
 [clients] --1<-- [orders]
+
 [orders] --1<-- [delivery]
+
 [orders] --1<-- [payments]
+
 [orders] >--0< [product] (via [product_order])
+
 [product] >--0< [supplier] (via [product_supplier])
+
 [product] >--0< [seller] (via [product_seller])
+
 [product] >--0< [storage] (via [product_storage])
+
 
 ## 🚀 Scripts SQL
 
